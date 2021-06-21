@@ -1,4 +1,5 @@
-:star2: PROJECT CV - DIGITALENT PROA PYT-2 (Group 6) ===<a name="TOP"></a> :star2:
+:star2: PROJECT CV - DIGITALENT PROA PYT-2 (Group 6)<a name="TOP"></a>
+===================
 
 ## Sebelum menggunakan project ini diharapkan ikuti instruksi dibawah ini agar hasilnya maksimal ##
 
@@ -46,7 +47,7 @@ Jika library pada folder env tidak berfungsi, mohon buat env baru dengan cara:
     > flask run
 
 ### :family_man_boy_boy: CREATOR :family_man_boy_boy: ###
-- EGY YUDA NUGRAHA -> [Profile Github](https://pages.github.com/egyyudanugraha)
-- MAULANA ANWAR -> [Profile Github](https://pages.github.com/Maul-san)
-- Diaz Jubairy Prabowo -> [Profile Github](https://pages.github.com/diazers)
+- EGY YUDA NUGRAHA -> [Profile Github](https://github.com/egyyudanugraha)
+- MAULANA ANWAR -> [Profile Github](https://github.com/Maul-san)
+- DIAZ JUBAIRY PRABOWO -> [Profile Github](https://github.com/diazers)
 
