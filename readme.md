@@ -1,7 +1,7 @@
 :star2: PROJECT CV - DIGITALENT PROA PYT-2 (Group 6) :star2:<a name="TOP"></a>
 ===================
 
-## Sebelum menggunakan project ini diharapkan ikuti instruksi dibawah ini agar hasilnya maksimal ##
+## :bangbang: Sebelum menggunakan project ini diharapkan ikuti instruksi dibawah ini agar hasilnya maksimal :bangbang: ##
 
 ### FONT REQUIRENMENT ###
 1. Barlow
