@@ -1,4 +1,4 @@
-:star2: PROJECT CV - DIGITALENT PROA PYT-2 (Group 6)<a name="TOP"></a>
+:star2: PROJECT CV - DIGITALENT PROA PYT-2 (Group 6) :star2:<a name="TOP"></a>
 ===================
 
 ## Sebelum menggunakan project ini diharapkan ikuti instruksi dibawah ini agar hasilnya maksimal ##
