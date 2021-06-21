@@ -16,7 +16,7 @@
 10. Raleway
 11. Raleway Medium
 
-Harap install terlebih dahulu font diatas yang sudah kami sediakan di folder fonts untuk
+Harap install terlebih dahulu font diatas yang sudah kami sediakan di folder **fonts** untuk
 menghindari missing font pada dokumen CV
 
 ### :star: CARA PAKAI PROJECT :star: ###
