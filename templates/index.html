@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+{% block content %}
+  <!-- ***** Header Area End ***** -->
+  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+                <h6>Selamat Datang di Project CV</h6>
+                <h2>Kami Membantu <em>Membuat</em><span> CV</span> Kamu Lebih Menarik</h2>
+                <p>Kamu hanya perlu mengisi data diri dan memilih design CV yang sudah kami sediakan.</p>
+                <form id="search" action="/buat_cv">
+                  <fieldset>
+                    <input type="text" value="Klik buat CV sekarang" class="email" disabled>
+                  </fieldset>
+                  <fieldset>
+                    <button type="submit" class="main-button">BUAT CV</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="{{ url_for('static', filename='assets/images/banner-right-image.png') }}" alt="team meeting">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <img src="{{ url_for('static', filename='assets/images/about-left-image.png') }}" alt="person graphic">
+          </div>
+        </div>
+        <div class="col-lg-8 align-self-center">
+          <div class="services">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/service-icon-01.png') }}" alt="reporting">
+                  </div>
+                  <div class="right-text">
+                    <h4>Mudah</h4>
+                    <p>Kamu hanya perlu mengisi data diri!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/service-icon-02.png') }}" alt="">
+                  </div>
+                  <div class="right-text">
+                    <h4>Cepat</h4>
+                    <p>Gak perlu buang waktu, buat CV-mu dalam 1 menit</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/service-icon-03.png') }}" alt="">
+                  </div>
+                  <div class="right-text">
+                    <h4>Design Menarik</h4>
+                    <p>Kami menyediakan beberapa design CV untukmu</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="item wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
+                  <div class="icon">
+                    <img src="{{ url_for('static', filename='assets/images/service-icon-04.png') }}" alt="">
+                  </div>
+                  <div class="right-text">
+                    <h4>Gratis</h4>
+                    <p>Tidak perlu bayar untuk mendapatkan Design CV bagus</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h2>Beberapa <em>Design</em> <span>CV</span> yang bisa <span>kamu</span> <em>pilih</em></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <a href="/buat_cv">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+              <div class="hidden-content">
+                <h4>Simple</h4>
+                <p>Design simple untuk kamu yang gak mau ribet.</p>
+              </div>
+              <div class="showed-content">
+                <img src="{{ url_for('static', filename='assets/images/CV1.jpg') }}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="/buat_cv">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+              <div class="hidden-content">
+                <h4>Modern</h4>
+                <p>Design yang kekinian membuatmu lebih percaya diri.</p>
+              </div>
+              <div class="showed-content">
+                <img src="{{ url_for('static', filename='assets/images/CV2.jpg') }}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="/buat_cv">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="hidden-content">
+                <h4>Elegant</h4>
+                <p>Kamu suka design yg elegant? Tenang, sudah kami siapkan kok.</p>
+              </div>
+              <div class="showed-content">
+                <img src="{{ url_for('static', filename='assets/images/CV3.jpg') }}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="/buat_cv">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+              <div class="hidden-content">
+                <h4>Aesthetic</h4>
+                <p>Design aesthetic untuk kamu yang suka banyak warna.</p>
+              </div>
+              <div class="showed-content">
+                <img src="{{ url_for('static', filename='assets/images/CV4.jpg') }}" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

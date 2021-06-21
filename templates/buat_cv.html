@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="#" method="post" enctype="multipart/form-data" id="buat_cv">
+    <div id="contact" class="contact-us section">
+        <div class="container">
+            {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            <strong>{{ message }}</strong>
+                            {% if category == 'success' %} 
+                                <a href="{{url_for('download_file', namafile=filename)}}" class="text-decoration-none">Download CV kamu disini</a>.
+                            {% endif %}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="container rounded bg-white mt-5 mb-5">
+                <div class="row">
+                    <div class="col-md-2 border-right">
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                            <img class="rounded-circle" id="photo" width="100" src="{{ url_for('static', filename='assets/images/person.jpg') }}">
+                            <input type="file" id="files" class="form-control form-control-sm" name="photo" style="display: none;" required>
+                            <label for="files" class="btn btn-outline-primary btn-sm mt-2">Pilih foto</label>
+                            <select class="form-select form-select-sm mt-3" name="design" aria-label=".form-select-sm example" required>
+                                <option value="">Pilih Design CV</option>
+                                <option value="1">Simple</option>
+                                <option value="2">Modern</option>
+                                <option value="3">Elegant</option>
+                                <option value="4">Aesthetic</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="col-md-5 border-right">
+                        <div class="p-3 py-5">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="text-right">Isi Data Diri</h4>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12">
+                                    <label class="labels">Nama Lengkap</label>
+                                    <input type="text" name="nama" class="form-control" maxlength="22" placeholder="Nama lengkap (max 20)" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="labels">Tempat Lahir</label>
+                                            <input type="text" name="tempat_lahir" class="form-control" placeholder="Tempat Lahir" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="labels">Tanggal Lahir</label>
+                                            <input type="text" name="tgl_lahir" id="tgl" class="form-control" placeholder="Tanggal Lahir" autocomplete="none" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Nomor Telepon / Whatsapp</label>
+                                    <input type="text" name="no_hp" class="form-control" placeholder="Nomor telepon" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Email</label>
+                                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Sosial Media</label>
+                                    <input type="text" name="social" class="form-control" placeholder="Sosial media -> @contoh.id" required>
+                                </div>
+                                <div class="col-md-12">
+                                    <label class="labels">Alamat</label>
+                                    <input type="text" name="alamat" class="form-control" maxlength="50" placeholder="Alamat" required>
+                                </div>
+                                <div class="p-3 py-5">
+                                    <div class="d-flex justify-content-between align-items-center experience">
+                                        <span>Keahlian <i>(Skill)</i></span>
+                                        <a onclick="tambahKeahlian()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Keahlian</a>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label class="labels">Keahlian</label>
+                                        <input type="text" name="keahlian" class="form-control" placeholder="Apa kemampuan yang kamu miliki?" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="p-3 pt-5 bio">
+                            <div class="d-flex justify-content-between align-items-center experience">
+                                <span>Biografi</span>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="labels">Biografi</label>
+                                <textarea type="text" name="bio" rows="3" class="form-control" placeholder="Ceritakan sedikit tentangmu..." required></textarea>
+                            </div>
+                        </div>
+                        <div class="p-3 pend">
+                            <div class="d-flex justify-content-between align-items-center experience">
+                                <span>Pendidikan</span>
+                                <button type="button" onclick="tambahPendidikan()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Pendidikan</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label class="labels">Pendidikan</label>
+                                    <input type="text" name="pendidikan" class="form-control" placeholder="Pendidikan dasar" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="labels">Tahun lulus</label>
+                                    <input type="text" name="thn_pend" class="form-control" placeholder="Tahun" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label class="labels">Pendidikan</label>
+                                    <input type="text" name="pendidikan" class="form-control" placeholder="Pendidikan menengah pertama" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="labels">Tahun lulus</label>
+                                    <input type="text" name="thn_pend" class="form-control" placeholder="Tahun" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label class="labels">Pendidikan</label>
+                                    <input type="text" name="pendidikan" class="form-control" placeholder="Pendidikan menengah atas" required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="labels">Tahun lulus</label>
+                                    <input type="text" name="thn_pend" class="form-control" placeholder="Tahun" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-3 py-5 peng">
+                            <div class="d-flex justify-content-between align-items-center experience">
+                                <span>Pengalaman</span>
+                                <button type="button" onclick="tambahPengalaman()" class="btn btn-outline-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Pengalaman</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <label class="labels">Pengalaman</label>
+                                    <input type="text" name="pengalaman" class="form-control" placeholder="Pernah bekerja/magang di..." required>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="labels">Tahun</label>
+                                    <input type="text" name="thn_peng" class="form-control" placeholder="Tahun" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mb-3" id="buat"><button class="btn btn-danger" type="submit">Buat CV</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
